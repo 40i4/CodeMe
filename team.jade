@@ -1,12 +1,15 @@
 extends layout
 
-mixin team-member(name, position)
+mixin team-member(photo, name, position, about)
     .project.col-xs-6.col-sm-4.col-lg-3
         .team__member
-            img.member__photo
+            img.member__photo(src="#{photo}", alt="#{name}")
             h5.member__name
+                | #{name}
             h6.member__position
+                | #{position}
             p.member__about
+                | #{about}
 
 append sub_content
     section.team.row
@@ -32,14 +35,14 @@ append sub_content
                             | SEO/SEM Specialist
 
         .team__members.container-fluid
-            +team-member('Member name', 'Position')
-            +team-member('Member name', 'Position')
+            +team-member('Photo', 'Member name', 'Position', 'About')
+            +team-member('Photo', 'Member name', 'Position', 'About')
 
-            +team-member('Member name', 'Position')
-            +team-member('Member name', 'Position')
+            +team-member('Photo', 'Member name', 'Position', 'About')
+            +team-member('Photo', 'Member name', 'Position', 'About')
 
-            +team-member('Member name', 'Position')
-            +team-member('Member name', 'Position')
+            +team-member('Photo', 'Member name', 'Position', 'About')
+            +team-member('Photo', 'Member name', 'Position', 'About')
 
 
     section.we-believe.row
